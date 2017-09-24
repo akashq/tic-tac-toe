@@ -1,7 +1,7 @@
 /*
  * ticatactoe.cpp
  * 
- * Copyright 2017 shad0w <x32@parrot>
+ * Copyright 2017 mr.ey3
  * 
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -41,6 +41,7 @@ void gboxcalculationp1();
 void gboxcalculationp2();
 void printarray();
 void initialize();
+void banner();
 //int random();
 
 //global variables
@@ -77,7 +78,12 @@ void initialize()
 		}
 	}
 }
-	
+
+void banner()
+{
+	cout<<"Tic-Tac-Toe"<<endl;
+	cout<<"Author: mr.ey3"<<endl;
+}
 
 void gboxshow()
 {
@@ -835,10 +841,11 @@ void gboxcalculationp2()
 int main()
 {
 	initialize();
+	banner();
 	
 	char choose01;
 	
-	cout<<"Player 1:\n"<<"Enter your name: ";
+	cout<<"\nPlayer 1:\n"<<"Enter your name: ";
 	cin>>player1;
 	
 	cout<<"\nPlayer 2:\n"<<"Enter your name: ";
@@ -885,5 +892,6 @@ int main()
 		player2input();
 	}
 	cout<<"\n"<<"It's a draw"<<endl;
+	
 	return 0;
 }
