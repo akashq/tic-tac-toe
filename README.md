@@ -1,2 +1,5 @@
 # tic-tac-toe
-under development
+Multiplayer version is available
+
+Singleplayer is under development
+
