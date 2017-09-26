@@ -114,6 +114,9 @@ void player1input()
 {
 	int pos;
 	
+	cout<<endl;
+	gboxshow();
+	
 	//player1 t1
 	cout<<"\n"<<endl;
 	cout<<player1<<" enter the position: ";
@@ -379,6 +382,9 @@ void player1input()
 void player2input()
 {
 	int pos;
+	
+	cout<<endl;
+	gboxshow();
 	
 	//player2 t1
 	cout<<"\n"<<endl;
