@@ -28,6 +28,7 @@
 
 #include <iostream>
 #include <stdlib.h>
+#include <ctime>
 using namespace std;
 
 void gboxshow();
@@ -41,7 +42,7 @@ void gboxcalculationp2();
 void printarray();
 void initialize();
 void banner();
-//int random();
+int random_01();
 
 //global variables
 int player1arr[5], player2arr[5];
@@ -82,6 +83,24 @@ void banner()
 {
 	cout<<"Tic-Tac-Toe"<<endl;
 	cout<<"Author: mr.ey3"<<endl;
+}
+
+int random_01()
+{
+	int test;
+	
+	srand(time(NULL));
+	test=rand()%10;
+	if(test==1 || test==3 || test==5 || test==7 || test==9)
+	{
+		test=1;
+	}
+	else
+	{
+		test=0;
+	}
+	
+	return test;
 }
 
 void gboxshow()
@@ -843,6 +862,7 @@ int main()
 	banner();
 	
 	char choose01;
+	int rando;
 	
 	cout<<"\nPlayer 1:\n"<<"Enter your name: ";
 	cin>>player1;
@@ -863,15 +883,33 @@ int main()
 	{
 		cout<<"\n"<<player1<<" you are gonna play with 0"<<endl;
 		cout<<player2<<" you are gonna play with 1"<<endl;
+		
+		player1input();
 	}
 	else if(choose01 == '2')
 	{
 		cout<<"\n"<<player2<<" you are gonna play with 0"<<endl;
 		cout<<player1<<" you are gonna play with 1"<<endl;
+		
+		player2input();
 	}
 	else if(choose01 == 'd')
 	{
-		//random();
+		rando=random_01();
+		if(rando == 1)
+		{
+			cout<<"\n"<<player1<<" you are gonna play with 0"<<endl;
+			cout<<player2<<" you are gonna play with 1"<<endl;
+		
+			player1input();
+		}
+		else
+		{
+			cout<<"\n"<<player2<<" you are gonna play with 0"<<endl;
+			cout<<player1<<" you are gonna play with 1"<<endl;
+		
+			player2input();
+		}
 	}
 	else
 	{
@@ -882,14 +920,6 @@ int main()
 	cout<<endl;
 	gboxshow();
 		
-	if(choose01=='1')
-	{
-		player1input();
-	}
-	else if(choose01=='2')
-	{
-		player2input();
-	}
 	cout<<"\n"<<"It's a draw"<<endl;
 	
 	return 0;
